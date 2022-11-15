@@ -1,0 +1,14 @@
+<div class="main-content page-m" >
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <google-map height="400px"
+                        width="750px"
+                        [center]="center"
+                        [zoom]="zoom"
+                        (mapClick)="moveMap($event)"
+                        (mapMousemove)="move($event)">
+            </google-map>
+        </div>
+    </div>
+</div>
+

@@ -7,13 +7,13 @@
                 <table class="table table-bordered">
                     <tr>
                         <th width="20%"></th>
-                        <th width="50%">Detail</th>
+                        <th width="50%">Details</th>
                         <th width="30%"></th>
                     </tr>
 
                     <tr *ngFor="let tempCartItem of cartItems">
                         <td>
-                            <img src="{{ tempCartItem.imageUrl }}" class="img-responsive" width="150px">
+                            <img src="{{ tempCartItem.imageUrl }}" class="img-responsive" width="300px">
                         </td>
                         <td>
                             <p>{{ tempCartItem.name }}</p>
@@ -52,9 +52,9 @@
                         <td colspan="2"></td>
                         <td style="font-weight: bold">
                             <p>Total Items: {{ totalQuantity }}</p>
-                            <p>Shipping: <s>SGD10.00</s></p>
+                            <p>Delivery fee: <s>SGD10.00</s></p>
                             <p>Total Price: {{ totalPrice | currency:'SGD' }}</p>
-                            <a routerLink="/checkout" class="btn">Checkout</a>
+                            <button routerLink="/checkout" class="au-btn-submit">Checkout</button>
                         </td>
                     </tr>
                 </table>

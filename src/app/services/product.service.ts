@@ -10,9 +10,9 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-  private baseUrl = 'https://csf-final-backend.herokuapp.com//api/products';
+  private baseUrl = 'https://csf-final-backend.herokuapp.com/api/products';
 
-  private categoryUrl = 'https://csf-final-backend.herokuapp.com//api/product-category'
+  private categoryUrl = 'https://csf-final-backend.herokuapp.com/api/product-category'
 
   constructor(private httpClient: HttpClient) { }
 

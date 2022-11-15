@@ -24,13 +24,7 @@ import { OktaAuth } from '@okta/okta-auth-js';
 import { MembersPageComponent } from './components/members-page/members-page.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
-import { MapComponent } from './components/map/map.component'
-import { AuthInterceptor } from './services/auth.interceptor';
-import { SecureComponent } from './secure/secure.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { RegisterComponent } from './components/register/register.component';
-import { Login1Component } from './components/login1/login1.component';
-import { AuthGuard } from './auth.guard';
+import { MapComponent } from './components/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -55,13 +49,6 @@ function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
 }
 
 const routes: Routes = [
-
-  
-    { path: '', redirectTo: 'secure', pathMatch: 'full' },
-    { path: 'secure', canActivate: [ AuthGuard ], component: SecureComponent },
-    { path: 'login1', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: '404', component: NotFoundComponent },
     
 
     {path: 'locate', component: MapComponent},
@@ -95,11 +82,7 @@ const routes: Routes = [
     LoginComponent,
     LoginStatusComponent,
     MembersPageComponent,
-    MapComponent,
-    SecureComponent,
-    NotFoundComponent,
-    RegisterComponent,
-    Login1Component,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -121,11 +104,7 @@ const routes: Routes = [
     MatFormFieldModule
 
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-    },ProductService, { provide: OKTA_CONFIG, useValue: {oktaAuth}}],
+  providers: [ProductService, { provide: OKTA_CONFIG, useValue: {oktaAuth}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

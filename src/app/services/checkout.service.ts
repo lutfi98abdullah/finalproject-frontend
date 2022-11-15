@@ -8,7 +8,7 @@ import { Purchase } from '../common/purchase';
 })
 export class CheckoutService {
 
-  private purchaseUrl = "https://csf-final-backend.herokuapp.com//api/checkout/purchase"
+  private purchaseUrl = "https://csf-final-backend.herokuapp.com/api/checkout/purchase"
 
   constructor(private httpClient: HttpClient) { }
 
